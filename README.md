@@ -66,7 +66,14 @@ vtkCapsuleSource* m_pvtkCapsuleSource;
 ```
   - Class Wizard... 에서 ~View 클래스 선택하고, Messages에서 WM_DESTROY, WM_ERASEBKGND, WM_SIZE에 대한 handler를 추가한다.
   - Class Wizard... 에서 ~View 클래스 선택하고, Virtual Functions에서 OnInitialUpdate에 대한 function을 추가한다.
-  - ~View.cpp 의 생성함수 View()에 변수 초기화 코드를 추가한다.
+  - ~View.cpp에서 header 파일들을 include 하는 부분에 아래 내용을 추가한다.
+``` c++
+#include <vtkAutoInit.h>  
+VTK_MODULE_INIT(vtkRenderingOpenGL2);
+VTK_MODULE_INIT(vtkInteractionStyle);
+VTK_MODULE_INIT(vtkRenderingFreeType);
+```
+  - ~View.cpp의 생성함수 View()에 변수 초기화 코드를 추가한다.
 ``` c++
 m_pvtkMFCWindow = NULL;
 
@@ -78,7 +85,7 @@ m_pvtkActor = vtkActor::New();
 m_pvtkMapper = vtkPolyDataMapper::New();
 m_pvtkCapsuleSource = vtkCapsuleSource::New();
 ```
-  - ~View.cpp 의 소멸함수 ~View()에 변수 메모리 삭제 코드를 추가한다.
+  - ~View.cpp의 소멸함수 ~View()에 변수 메모리 삭제 코드를 추가한다.
 ``` c++
 if (m_pvtkMFCWindow != NULL)
    delete m_pvtkMFCWindow;
