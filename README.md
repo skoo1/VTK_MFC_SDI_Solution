@@ -17,9 +17,7 @@
     - C:\Works\VTK-9.0.1\build\bin\Debug 에 lib 과 dll 이 생성된다.
 
 ### 새로운 Visual C++ 프로젝트 Create 한다. 
-  - 여기서는 이름을 SimpleVTKMFCSDI 로 한다.
   - MFCApp, SDI(Single Document Interface)
-  - Advanced 옵션은 모두 turn off 하는 것을 추천한다.
   - 이 예제에서는 ~View.h와 ~View.cpp만 수정한다.
   - ~View.h 에 아래 header 파일들을 include 한다.
 ``` c++
@@ -32,7 +30,8 @@
 #include "vtkPolyDataMapper.h"
 #include "vtkCapsuleSource.h"
 ```
-  - 위 header 파일들의 위치를 이 프로젝트의 Properties -> C/C++ -> General -> Additional Include Directories 에 추가한다.
+  - 위 header 파일들의 위치를 이 프로젝트의 Properties -> C/C++ -> General -> Additional Include Directories에 추가한다.
+    - 위 header 파일들은 내부에 다른 header 파일들을 포함한다. 그에 해당하는 include directory도 추가해야 한다.
 ```
 C:\Works\VTK-9.0.1\Common\Core
 C:\Works\VTK-9.0.1\Common\DataModel
@@ -155,6 +154,7 @@ CView::OnDestroy();
   C:\Works\VTK-9.0.1\build\lib\Debug
 ```
   - 이 프로젝트의 Properties -> Linker -> Input -> Additional Dependencies에 아래 lib 파일들을 추가한다.
+    - 아래 lib 파일들이 모두 필요한 것은 아니다. 필요한 것만 넣을 때 성능이 좋아지는지 확인이 필요하다.
 ```
 vtkChartsCore-9.0d.lib
 vtkCommonColor-9.0d.lib
@@ -286,13 +286,14 @@ vtkViewsInfovis-9.0d.lib
 vtkWrappingTools-9.0d.lib
 vtkzlib-9.0d.lib
 ```
-  - 실행시 DLL 로딩을 위하여 이 프로젝트의 Properties -> DebuggingEnvironment에 아래 내용을 추가한다.
+  - 실행시 dll 로딩을 위하여 이 프로젝트의 Properties -> DebuggingEnvironment에 아래 내용을 추가한다.
 ```
 PATH=%PATH%;C:\Users\skoo\Works\VTK-9.0.1\build\bin\Debug
 ```
 ### 특수 환경 설정
   - 이 프로젝트를 실행하면, 프로그램이 종료되면서 memory dump 현상이 발생한다. 이는 VTK objects가 MFC objects보다 늦게 소멸되기 때문이다.
     - 이 프로젝트의 Properties -> Linker -> Input -> Delay Loaded Dlls 에 아래 dll들을 추가한다.
+    - 아래 dll 파일들이 모두 필요한 것은 아니다. 필요한 것만 넣을 때 성능이 좋아지는지 확인이 필요하다.
 ```
 vtkChartsCore-9.0d.dll
 vtkCommonColor-9.0d.dll
@@ -424,7 +425,7 @@ vtkViewsInfovis-9.0d.dll
 vtkWrappingTools-9.0d.dll
 vtkzlib-9.0d.dll
 ```
-  - tlog 파일이 사용중이라 link.exe를 사용할 수 없다는 에러가 발생할 경우 (Linker busy 에러)
+  - 링킹 시에 tlog 파일이 사용중이라 link.exe를 사용할 수 없다는 에러가 발생할 경우 (Linker busy 에러)
     - 이 프로젝트의 Properties -> Linker -> General -> Enable Incremental Linking을 No로 설정한다.
   - 실행 시간에 이해가 안되는 에러가 발생할 때 ...
     - 이 프로젝트의 Properties -> General -> Character Set을 Use Unicode Character Set으로 설정한다.
