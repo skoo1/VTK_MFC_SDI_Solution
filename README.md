@@ -90,7 +90,7 @@ if (m_pvtkMFCWindow != NULL)
 ```
   - ~View.cpp의 OnInitialUpdate()에 아래 코드를 추가한다.
 ``` c++
-\\CView::OnInitialUpdate();
+CView::OnInitialUpdate();
 
 m_pvtkMFCWindow = new vtkMFCWindow(this);
 m_pvtkMFCWindow->GetRenderWindow()->AddRenderer(m_pvtkRenderer);
