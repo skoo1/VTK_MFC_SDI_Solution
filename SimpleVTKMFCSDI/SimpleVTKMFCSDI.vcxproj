@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{D9075238-E3CF-4169-AE7F-B34446FC1BCC}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <RootNamespace>SimpleVTKMFCSDI</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Works\VTK-9.0.1\Common\Core;C:\Works\VTK-9.0.1\Common\DataModel;C:\Works\VTK-9.0.1\Common\ExecutionModel;C:\Works\VTK-9.0.1\Common\Math;C:\Works\VTK-9.0.1\Filters\Sources;C:\Works\VTK-9.0.1\GUISupport\MFC;C:\Works\VTK-9.0.1\Interaction\Style;C:\Works\VTK-9.0.1\Rendering\Core;C:\Works\VTK-9.0.1\Rendering\OpenGL2;C:\Works\VTK-9.0.1\Utilities\KWIML;C:\Works\VTK-9.0.1\build\Common\Core;C:\Works\VTK-9.0.1\build\Common\DataModel;C:\Works\VTK-9.0.1\build\Common\ExecutionModel;C:\Works\VTK-9.0.1\build\Filters\Core;C:\Works\VTK-9.0.1\build\Filters\Sources;C:\Works\VTK-9.0.1\build\GUISupport\MFC;C:\Works\VTK-9.0.1\build\Interaction\Style;C:\Works\VTK-9.0.1\build\Rendering\UI;C:\Works\VTK-9.0.1\build\Rendering\OpenGL2;C:\Works\VTK-9.0.1\build\Rendering\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>C:\Works\VTK-9.0.1\build\lib\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>vtkChartsCore-9.0d.lib;vtkCommonColor-9.0d.lib;vtkCommonComputationalGeometry-9.0d.lib;vtkCommonCore-9.0d.lib;vtkCommonDataModel-9.0d.lib;vtkCommonExecutionModel-9.0d.lib;vtkCommonMath-9.0d.lib;vtkCommonMisc-9.0d.lib;vtkCommonSystem-9.0d.lib;vtkCommonTransforms-9.0d.lib;vtkDICOMParser-9.0d.lib;vtkDomainsChemistry-9.0d.lib;vtkdoubleconversion-9.0d.lib;vtkexodusII-9.0d.lib;vtkexpat-9.0d.lib;vtkFiltersAMR-9.0d.lib;vtkFiltersCore-9.0d.lib;vtkFiltersExtraction-9.0d.lib;vtkFiltersFlowPaths-9.0d.lib;vtkFiltersGeneral-9.0d.lib;vtkFiltersGeneric-9.0d.lib;vtkFiltersGeometry-9.0d.lib;vtkFiltersHybrid-9.0d.lib;vtkFiltersHyperTree-9.0d.lib;vtkFiltersImaging-9.0d.lib;vtkFiltersModeling-9.0d.lib;vtkFiltersParallel-9.0d.lib;vtkFiltersParallelImaging-9.0d.lib;vtkFiltersPoints-9.0d.lib;vtkFiltersProgrammable-9.0d.lib;vtkFiltersSelection-9.0d.lib;vtkFiltersSMP-9.0d.lib;vtkFiltersSources-9.0d.lib;vtkFiltersStatistics-9.0d.lib;vtkFiltersTexture-9.0d.lib;vtkFiltersTopology-9.0d.lib;vtkFiltersVerdict-9.0d.lib;vtkfreetype-9.0d.lib;vtkGeovisCore-9.0d.lib;vtkgl2ps-9.0d.lib;vtkglew-9.0d.lib;vtkGUISupportMFC-9.0d.lib;vtkhdf5-9.0d.lib;vtkhdf5_hl-9.0d.lib;vtkImagingColor-9.0d.lib;vtkImagingCore-9.0d.lib;vtkImagingFourier-9.0d.lib;vtkImagingGeneral-9.0d.lib;vtkImagingHybrid-9.0d.lib;vtkImagingMath-9.0d.lib;vtkImagingMorphological-9.0d.lib;vtkImagingSources-9.0d.lib;vtkImagingStatistics-9.0d.lib;vtkImagingStencil-9.0d.lib;vtkInfovisCore-9.0d.lib;vtkInfovisLayout-9.0d.lib;vtkInteractionImage-9.0d.lib;vtkInteractionStyle-9.0d.lib;vtkInteractionWidgets-9.0d.lib;vtkIOAMR-9.0d.lib;vtkIOAsynchronous-9.0d.lib;vtkIOCityGML-9.0d.lib;vtkIOCore-9.0d.lib;vtkIOEnSight-9.0d.lib;vtkIOExodus-9.0d.lib;vtkIOExport-9.0d.lib;vtkIOExportGL2PS-9.0d.lib;vtkIOExportPDF-9.0d.lib;vtkIOGeometry-9.0d.lib;vtkIOImage-9.0d.lib;vtkIOImport-9.0d.lib;vtkIOInfovis-9.0d.lib;vtkIOLegacy-9.0d.lib;vtkIOLSDyna-9.0d.lib;vtkIOMINC-9.0d.lib;vtkIOMotionFX-9.0d.lib;vtkIOMovie-9.0d.lib;vtkIONetCDF-9.0d.lib;vtkIOOggTheora-9.0d.lib;vtkIOParallel-9.0d.lib;vtkIOParallelXML-9.0d.lib;vtkIOPLY-9.0d.lib;vtkIOSegY-9.0d.lib;vtkIOSQL-9.0d.lib;vtkIOTecplotTable-9.0d.lib;vtkIOVeraOut-9.0d.lib;vtkIOVideo-9.0d.lib;vtkIOXML-9.0d.lib;vtkIOXMLParser-9.0d.lib;vtkjpeg-9.0d.lib;vtkjsoncpp-9.0d.lib;vtklibharu-9.0d.lib;vtklibproj-9.0d.lib;vtklibxml2-9.0d.lib;vtkloguru-9.0d.lib;vtklz4-9.0d.lib;vtklzma-9.0d.lib;vtkmetaio-9.0d.lib;vtknetcdf-9.0d.lib;vtkogg-9.0d.lib;vtkParallelCore-9.0d.lib;vtkParallelDIY-9.0d.lib;vtkpng-9.0d.lib;vtkpugixml-9.0d.lib;vtkRenderingAnnotation-9.0d.lib;vtkRenderingContext2D-9.0d.lib;vtkRenderingCore-9.0d.lib;vtkRenderingFreeType-9.0d.lib;vtkRenderingGL2PSOpenGL2-9.0d.lib;vtkRenderingImage-9.0d.lib;vtkRenderingLabel-9.0d.lib;vtkRenderingLOD-9.0d.lib;vtkRenderingOpenGL2-9.0d.lib;vtkRenderingSceneGraph-9.0d.lib;vtkRenderingUI-9.0d.lib;vtkRenderingVolume-9.0d.lib;vtkRenderingVolumeOpenGL2-9.0d.lib;vtkRenderingVtkJS-9.0d.lib;vtksqlite-9.0d.lib;vtksys-9.0d.lib;vtkTestingRendering-9.0d.lib;vtktheora-9.0d.lib;vtktiff-9.0d.lib;vtkverdict-9.0d.lib;vtkViewsContext2D-9.0d.lib;vtkViewsCore-9.0d.lib;vtkViewsInfovis-9.0d.lib;vtkWrappingTools-9.0d.lib;vtkzlib-9.0d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>vtkChartsCore-9.0d.dll;vtkCommonColor-9.0d.dll;vtkCommonComputationalGeometry-9.0d.dll;vtkCommonCore-9.0d.dll;vtkCommonDataModel-9.0d.dll;vtkCommonExecutionModel-9.0d.dll;vtkCommonMath-9.0d.dll;vtkCommonMisc-9.0d.dll;vtkCommonSystem-9.0d.dll;vtkCommonTransforms-9.0d.dll;vtkDICOMParser-9.0d.dll;vtkDomainsChemistry-9.0d.dll;vtkdoubleconversion-9.0d.dll;vtkexodusII-9.0d.dll;vtkexpat-9.0d.dll;vtkFiltersAMR-9.0d.dll;vtkFiltersCore-9.0d.dll;vtkFiltersExtraction-9.0d.dll;vtkFiltersFlowPaths-9.0d.dll;vtkFiltersGeneral-9.0d.dll;vtkFiltersGeneric-9.0d.dll;vtkFiltersGeometry-9.0d.dll;vtkFiltersHybrid-9.0d.dll;vtkFiltersHyperTree-9.0d.dll;vtkFiltersImaging-9.0d.dll;vtkFiltersModeling-9.0d.dll;vtkFiltersParallel-9.0d.dll;vtkFiltersParallelImaging-9.0d.dll;vtkFiltersPoints-9.0d.dll;vtkFiltersProgrammable-9.0d.dll;vtkFiltersSelection-9.0d.dll;vtkFiltersSMP-9.0d.dll;vtkFiltersSources-9.0d.dll;vtkFiltersStatistics-9.0d.dll;vtkFiltersTexture-9.0d.dll;vtkFiltersTopology-9.0d.dll;vtkFiltersVerdict-9.0d.dll;vtkfreetype-9.0d.dll;vtkGeovisCore-9.0d.dll;vtkgl2ps-9.0d.dll;vtkglew-9.0d.dll;vtkGUISupportMFC-9.0d.dll;vtkhdf5-9.0d.dll;vtkhdf5_hl-9.0d.dll;vtkImagingColor-9.0d.dll;vtkImagingCore-9.0d.dll;vtkImagingFourier-9.0d.dll;vtkImagingGeneral-9.0d.dll;vtkImagingHybrid-9.0d.dll;vtkImagingMath-9.0d.dll;vtkImagingMorphological-9.0d.dll;vtkImagingSources-9.0d.dll;vtkImagingStatistics-9.0d.dll;vtkImagingStencil-9.0d.dll;vtkInfovisCore-9.0d.dll;vtkInfovisLayout-9.0d.dll;vtkInteractionImage-9.0d.dll;vtkInteractionStyle-9.0d.dll;vtkInteractionWidgets-9.0d.dll;vtkIOAMR-9.0d.dll;vtkIOAsynchronous-9.0d.dll;vtkIOCityGML-9.0d.dll;vtkIOCore-9.0d.dll;vtkIOEnSight-9.0d.dll;vtkIOExodus-9.0d.dll;vtkIOExport-9.0d.dll;vtkIOExportGL2PS-9.0d.dll;vtkIOExportPDF-9.0d.dll;vtkIOGeometry-9.0d.dll;vtkIOImage-9.0d.dll;vtkIOImport-9.0d.dll;vtkIOInfovis-9.0d.dll;vtkIOLegacy-9.0d.dll;vtkIOLSDyna-9.0d.dll;vtkIOMINC-9.0d.dll;vtkIOMotionFX-9.0d.dll;vtkIOMovie-9.0d.dll;vtkIONetCDF-9.0d.dll;vtkIOOggTheora-9.0d.dll;vtkIOParallel-9.0d.dll;vtkIOParallelXML-9.0d.dll;vtkIOPLY-9.0d.dll;vtkIOSegY-9.0d.dll;vtkIOSQL-9.0d.dll;vtkIOTecplotTable-9.0d.dll;vtkIOVeraOut-9.0d.dll;vtkIOVideo-9.0d.dll;vtkIOXML-9.0d.dll;vtkIOXMLParser-9.0d.dll;vtkjpeg-9.0d.dll;vtkjsoncpp-9.0d.dll;vtklibharu-9.0d.dll;vtklibproj-9.0d.dll;vtklibxml2-9.0d.dll;vtkloguru-9.0d.dll;vtklz4-9.0d.dll;vtklzma-9.0d.dll;vtkmetaio-9.0d.dll;vtknetcdf-9.0d.dll;vtkogg-9.0d.dll;vtkParallelCore-9.0d.dll;vtkParallelDIY-9.0d.dll;vtkpng-9.0d.dll;vtkpugixml-9.0d.dll;vtkRenderingAnnotation-9.0d.dll;vtkRenderingContext2D-9.0d.dll;vtkRenderingCore-9.0d.dll;vtkRenderingFreeType-9.0d.dll;vtkRenderingGL2PSOpenGL2-9.0d.dll;vtkRenderingImage-9.0d.dll;vtkRenderingLabel-9.0d.dll;vtkRenderingLOD-9.0d.dll;vtkRenderingOpenGL2-9.0d.dll;vtkRenderingSceneGraph-9.0d.dll;vtkRenderingUI-9.0d.dll;vtkRenderingVolume-9.0d.dll;vtkRenderingVolumeOpenGL2-9.0d.dll;vtkRenderingVtkJS-9.0d.dll;vtksqlite-9.0d.dll;vtksys-9.0d.dll;vtkTestingRendering-9.0d.dll;vtktheora-9.0d.dll;vtktiff-9.0d.dll;vtkverdict-9.0d.dll;vtkViewsContext2D-9.0d.dll;vtkViewsCore-9.0d.dll;vtkViewsInfovis-9.0d.dll;vtkWrappingTools-9.0d.dll;vtkzlib-9.0d.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SimpleVTKMFCSDI.h" />
+    <ClInclude Include="SimpleVTKMFCSDIDoc.h" />
+    <ClInclude Include="SimpleVTKMFCSDIView.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SimpleVTKMFCSDI.cpp" />
+    <ClCompile Include="SimpleVTKMFCSDIDoc.cpp" />
+    <ClCompile Include="SimpleVTKMFCSDIView.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SimpleVTKMFCSDI.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\SimpleVTKMFCSDI.ico" />
+    <Image Include="res\SimpleVTKMFCSDIDoc.ico" />
+    <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\Toolbar256.bmp" />
+    <Image Include="res\userimages.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SimpleVTKMFCSDI.rc2" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
