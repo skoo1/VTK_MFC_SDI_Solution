@@ -105,3 +105,37 @@ m_pvtkActor->SetMapper(m_pvtkMapper);
 m_pvtkRenderer->AddActor(m_pvtkActor);
 m_pvtkRenderer->ResetCamera();
 ```
+  - ~View.cpp의 OnEraseBkgnd()를 아래와 같이 수정한다.
+``` c++
+// return CView::OnEraseBkgnd(pDC);
+return TRUE;
+```
+  - ~View.cpp의 OnSize()를 아래와 같이 수정한다.
+``` c++
+CView::OnSize(nType, cx, cy);
+
+if (m_pvtkMFCWindow != NULL)
+	m_pvtkMFCWindow->MoveWindow(0, 0, cx, cy);
+```
+  - ~View.cpp의 OnDestroy()를 아래와 같이 수정한다.
+``` c++
+if (m_pvtkCapsuleSource != NULL)
+	m_pvtkCapsuleSource->Delete();
+
+if (m_pvtkMapper != NULL)
+	m_pvtkMapper->Delete();
+
+if (m_pvtkActor != NULL)
+	m_pvtkActor->Delete();
+
+if (m_pvtkInteractorStyleTrackballCamera != NULL)
+	m_pvtkInteractorStyleTrackballCamera->Delete();
+
+if (m_pvtkRenderWindowInteractor != NULL)
+	m_pvtkRenderWindowInteractor->Delete();
+
+if (m_pvtkRenderer != NULL)
+	m_pvtkRenderer->Delete();
+
+CView::OnDestroy();
+```
