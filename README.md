@@ -52,3 +52,14 @@ C:\Works\VTK-9.0.1\build\Rendering\UI
 C:\Works\VTK-9.0.1\build\Rendering\OpenGL2
 C:\Works\VTK-9.0.1\build\Rendering\Core
 ```
+  - ~View.h 에 아래 private 변수들을 선언한다.
+```
+private:
+vtkMFCWindow* m_pvtkMFCWindow;
+vtkRenderer* m_pvtkRenderer;
+vtkRenderWindowInteractor* m_pvtkRenderWindowInteractor;
+vtkInteractorStyleTrackballCamera* m_pvtkInteractorStyleTrackballCamera;
+vtkActor* m_pvtkActor;
+vtkPolyDataMapper* m_pvtkMapper;
+vtkCapsuleSource* m_pvtkCapsuleSource;
+```
