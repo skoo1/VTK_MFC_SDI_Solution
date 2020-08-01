@@ -64,3 +64,23 @@ vtkActor* m_pvtkActor;
 vtkPolyDataMapper* m_pvtkMapper;
 vtkCapsuleSource* m_pvtkCapsuleSource;
 ```
+  - Class Wizard... 에서 ~View 클래스 선택하고, Messages에서 WM_DESTROY, WM_ERASEBKGND, WM_SIZE에 대한 handler를 추가한다.
+  - Class Wizard... 에서 ~View 클래스 선택하고, Virtual Functions에서 OnInitialUpdate에 대한 function을 추가한다.
+  - ~View 의 생성자 View()에 변수 초기화 코드를 작성한다.
+``` c++
+m_pvtkMFCWindow = NULL;
+
+m_pvtkRenderer = vtkRenderer::New();
+m_pvtkRenderWindowInteractor = vtkRenderWindowInteractor::New();
+m_pvtkInteractorStyleTrackballCamera = vtkInteractorStyleTrackballCamera::New();
+
+m_pvtkActor = vtkActor::New();
+m_pvtkMapper = vtkPolyDataMapper::New();
+m_pvtkCapsuleSource = vtkCapsuleSource::New();
+```
+  - ~View 의 소멸자 ~View()에 변수 메모리 삭제 코드를 작성한다.
+``` c++
+if (m_pvtkMFCWindow != NULL)
+	delete m_pvtkMFCWindow;
+```
+  
