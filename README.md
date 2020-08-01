@@ -30,7 +30,8 @@
 #include "vtkPolyDataMapper.h"
 #include "vtkCapsuleSource.h"
 ```
-  - 위 header 파일들의 위치를 이 프로젝트의 Properties -> C/C++ -> General -> Additional Include Directories 에 추가한다.
+  - 위 header 파일들의 위치를 이 프로젝트의 Properties -> C/C++ -> General -> Additional Include Directories에 추가한다.
+    - 위 header 파일들은 내부에 다른 header 파일들을 포함한다. 그에 해당하는 include directory도 추가해야 한다.
 ```
 C:\Works\VTK-9.0.1\Common\Core
 C:\Works\VTK-9.0.1\Common\DataModel
@@ -153,6 +154,7 @@ CView::OnDestroy();
   C:\Works\VTK-9.0.1\build\lib\Debug
 ```
   - 이 프로젝트의 Properties -> Linker -> Input -> Additional Dependencies에 아래 lib 파일들을 추가한다.
+    - 아래 lib 파일들이 모두 필요한 것은 아니다. 필요한 것만 넣을 때 성능이 좋아지는지 확인이 필요하다.
 ```
 vtkChartsCore-9.0d.lib
 vtkCommonColor-9.0d.lib
@@ -284,13 +286,14 @@ vtkViewsInfovis-9.0d.lib
 vtkWrappingTools-9.0d.lib
 vtkzlib-9.0d.lib
 ```
-  - 실행시 DLL 로딩을 위하여 이 프로젝트의 Properties -> DebuggingEnvironment에 아래 내용을 추가한다.
+  - 실행시 dll 로딩을 위하여 이 프로젝트의 Properties -> DebuggingEnvironment에 아래 내용을 추가한다.
 ```
 PATH=%PATH%;C:\Users\skoo\Works\VTK-9.0.1\build\bin\Debug
 ```
 ### 특수 환경 설정
   - 이 프로젝트를 실행하면, 프로그램이 종료되면서 memory dump 현상이 발생한다. 이는 VTK objects가 MFC objects보다 늦게 소멸되기 때문이다.
     - 이 프로젝트의 Properties -> Linker -> Input -> Delay Loaded Dlls 에 아래 dll들을 추가한다.
+    - 아래 dll 파일들이 모두 필요한 것은 아니다. 필요한 것만 넣을 때 성능이 좋아지는지 확인이 필요하다.
 ```
 vtkChartsCore-9.0d.dll
 vtkCommonColor-9.0d.dll
