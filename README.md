@@ -18,6 +18,7 @@
 ### Visual C++ 프로젝트 Create 한다.
   - MFCApp, SDI(Single Document Interface)
   - Advanced 옵션은 모두 turn off 하는 것을 추천한다.
+  - 이 예제에서는 ~View.h와 ~View.cpp만 수정한다.
   - ~View.h 에 아래 header 파일들을 include 한다.
 ``` c++
 #include "vtkMFCWindow.h"
