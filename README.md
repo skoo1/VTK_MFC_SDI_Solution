@@ -12,10 +12,12 @@
     - compiler 종류는 Visual C++ 2017 (Version 15.9.24 as of 2020.08.01)
     - processor 종류는 x64 (intel 64 bit)
 #### 위에서 generate 된 vtk의 sln 파일을 Visual C++ 2017에서 load 한다.
-#### build 종류를 debug, x64 로 설정하고, all build 한다.
-  - C:\Works\VTK-9.0.1\build\bin\Debug 에 lib 과 dll 이 생성된다.
+  - 이 프로젝트의 Properties -> General -> Character Set을 Use Unicode Character Set으로 설정한다.
+  - build 종류를 debug, x64 로 설정하고, all build 한다.
+    - C:\Works\VTK-9.0.1\build\bin\Debug 에 lib 과 dll 이 생성된다.
 
-### Visual C++ 프로젝트 Create 한다.
+### 새로운 Visual C++ 프로젝트 Create 한다. 
+  - 여기서는 이름을 SimpleVTKMFCSDI 로 한다.
   - MFCApp, SDI(Single Document Interface)
   - Advanced 옵션은 모두 turn off 하는 것을 추천한다.
   - 이 예제에서는 ~View.h와 ~View.cpp만 수정한다.
@@ -291,8 +293,8 @@ PATH=%PATH%;C:\Users\skoo\Works\VTK-9.0.1\build\bin\Debug
 ### 특수 환경 설정
   - 이 프로젝트를 실행하면, 프로그램이 종료되면서 memory dump 현상이 발생한다. 이는 VTK objects가 MFC objects보다 늦게 소멸되기 때문이다.
     - 이 프로젝트의 Properties -> Linker -> Input -> Delay Loaded Dlls 에 아래 dll들을 추가한다.
-    ```
-    vtkChartsCore-9.0d.dll
+```
+vtkChartsCore-9.0d.dll
 vtkCommonColor-9.0d.dll
 vtkCommonComputationalGeometry-9.0d.dll
 vtkCommonCore-9.0d.dll
@@ -421,5 +423,8 @@ vtkViewsCore-9.0d.dll
 vtkViewsInfovis-9.0d.dll
 vtkWrappingTools-9.0d.dll
 vtkzlib-9.0d.dll
-    ```
-  - 이 프로젝트의 Properties -> Linker -> General -> Enable Incremental Linking 을 No 로 한다. (Linker busy 에러가 날 경우)
+```
+  - tlog 파일이 사용중이라 link.exe를 사용할 수 없다는 에러가 발생할 경우 (Linker busy 에러)
+    - 이 프로젝트의 Properties -> Linker -> General -> Enable Incremental Linking을 No로 설정한다.
+  - 실행 시간에 이해가 안되는 에러가 발생할 때 ...
+    - 이 프로젝트의 Properties -> General -> Character Set을 Use Unicode Character Set으로 설정한다.
