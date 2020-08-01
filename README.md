@@ -17,9 +17,7 @@
     - C:\Works\VTK-9.0.1\build\bin\Debug 에 lib 과 dll 이 생성된다.
 
 ### 새로운 Visual C++ 프로젝트 Create 한다. 
-  - 여기서는 이름을 SimpleVTKMFCSDI 로 한다.
   - MFCApp, SDI(Single Document Interface)
-  - Advanced 옵션은 모두 turn off 하는 것을 추천한다.
   - 이 예제에서는 ~View.h와 ~View.cpp만 수정한다.
   - ~View.h 에 아래 header 파일들을 include 한다.
 ``` c++
