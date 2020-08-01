@@ -66,7 +66,7 @@ vtkCapsuleSource* m_pvtkCapsuleSource;
 ```
   - Class Wizard... 에서 ~View 클래스 선택하고, Messages에서 WM_DESTROY, WM_ERASEBKGND, WM_SIZE에 대한 handler를 추가한다.
   - Class Wizard... 에서 ~View 클래스 선택하고, Virtual Functions에서 OnInitialUpdate에 대한 function을 추가한다.
-  - ~View.cpp 의 생성함수 View()에 변수 초기화 코드를 작성한다.
+  - ~View.cpp 의 생성함수 View()에 변수 초기화 코드를 추가한다.
 ``` c++
 m_pvtkMFCWindow = NULL;
 
@@ -78,13 +78,30 @@ m_pvtkActor = vtkActor::New();
 m_pvtkMapper = vtkPolyDataMapper::New();
 m_pvtkCapsuleSource = vtkCapsuleSource::New();
 ```
-  - ~View.cpp 의 소멸함수 ~View()에 변수 메모리 삭제 코드를 작성한다.
+  - ~View.cpp 의 소멸함수 ~View()에 변수 메모리 삭제 코드를 추가한다.
 ``` c++
 if (m_pvtkMFCWindow != NULL)
    delete m_pvtkMFCWindow;
 ```
-  - ~View.cpp의 OnDraw(CDC* pDC)에서 pDC를 uncomment 하고, 아래 코드를 작성한다.
+  - ~View.cpp의 OnDraw(CDC* pDC)에서 pDC를 uncomment 하고, 아래 코드를 추가한다.
 ``` c++
 if (m_pvtkMFCWindow != NULL)
    m_pvtkMFCWindow->DrawDC(pDC);
+```
+  - ~View.cpp의 OnInitialUpdate()에 아래 코드를 추가한다.
+``` c++
+\\CView::OnInitialUpdate();
+
+m_pvtkMFCWindow = new vtkMFCWindow(this);
+m_pvtkMFCWindow->GetRenderWindow()->AddRenderer(m_pvtkRenderer);
+m_pvtkRenderer->SetBackground(0.0, 0.0, 0.5);
+m_pvtkRenderWindowInteractor->SetRenderWindow(m_pvtkMFCWindow->GetRenderWindow());
+m_pvtkRenderWindowInteractor->SetInteractorStyle(m_pvtkInteractorStyleTrackballCamera);
+
+m_pvtkCapsuleSource->SetCylinderLength(0.4);
+m_pvtkCapsuleSource->SetRadius(0.1);
+m_pvtkMapper->SetInputConnection(m_pvtkCapsuleSource->GetOutputPort());
+m_pvtkActor->SetMapper(m_pvtkMapper);
+m_pvtkRenderer->AddActor(m_pvtkActor);
+m_pvtkRenderer->ResetCamera();
 ```
