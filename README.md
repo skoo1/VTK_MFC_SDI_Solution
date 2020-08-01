@@ -29,3 +29,26 @@
 #include "vtkPolyDataMapper.h"
 #include "vtkCapsuleSource.h"
 ```
+  - 위 header 파일들의 위치를 이 프로젝트의 Properties -> C/C++ -> General -> Additional Include Directories 에 추가한다.
+```
+C:\Works\VTK-9.0.1\Common\Core
+C:\Works\VTK-9.0.1\Common\DataModel
+C:\Works\VTK-9.0.1\Common\ExecutionModel
+C:\Works\VTK-9.0.1\Common\Math
+C:\Works\VTK-9.0.1\Filters\Sources
+C:\Works\VTK-9.0.1\GUISupport\MFC
+C:\Works\VTK-9.0.1\Interaction\Style
+C:\Works\VTK-9.0.1\Rendering\Core
+C:\Works\VTK-9.0.1\Rendering\OpenGL2
+C:\Works\VTK-9.0.1\Utilities\KWIML
+C:\Works\VTK-9.0.1\build\Common\Core
+C:\Works\VTK-9.0.1\build\Common\DataModel
+C:\Works\VTK-9.0.1\build\Common\ExecutionModel
+C:\Works\VTK-9.0.1\build\Filters\Core
+C:\Works\VTK-9.0.1\build\Filters\Sources
+C:\Works\VTK-9.0.1\build\GUISupport\MFC
+C:\Works\VTK-9.0.1\build\Interaction\Style
+C:\Works\VTK-9.0.1\build\Rendering\UI
+C:\Works\VTK-9.0.1\build\Rendering\OpenGL2
+C:\Works\VTK-9.0.1\build\Rendering\Core
+```
