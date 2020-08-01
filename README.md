@@ -19,7 +19,7 @@
   - MFCApp, SDI(Single Document Interface)
   - Advanced 옵션은 모두 turn off 하는 것을 추천한다.
   - ~View.h 에 아래 header 파일들을 include 한다.
-``` 
+``` c
 #include "vtkMFCWindow.h"
 #include "vtkRenderer.h"
 #include "vtkWin32OpenGLRenderWindow.h"
