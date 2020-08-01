@@ -425,7 +425,7 @@ vtkViewsInfovis-9.0d.dll
 vtkWrappingTools-9.0d.dll
 vtkzlib-9.0d.dll
 ```
-  - tlog 파일이 사용중이라 link.exe를 사용할 수 없다는 에러가 발생할 경우 (Linker busy 에러)
+  - 링킹 시에 tlog 파일이 사용중이라 link.exe를 사용할 수 없다는 에러가 발생할 경우 (Linker busy 에러)
     - 이 프로젝트의 Properties -> Linker -> General -> Enable Incremental Linking을 No로 설정한다.
   - 실행 시간에 이해가 안되는 에러가 발생할 때 ...
     - 이 프로젝트의 Properties -> General -> Character Set을 Use Unicode Character Set으로 설정한다.
