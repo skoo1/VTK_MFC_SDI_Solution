@@ -1,16 +1,16 @@
 # VTK_MFC_SDI_Solution
 
-#### Visual C++ 2017을 설치한다.
-#### CMake를 설치한다.
+### 작성자: SK, 초기 작성일: 2020.08.03
+#### Visual C++ 2017을 설치한다. (Version 15.9.24 as of 2020.08.03)
+#### CMake를 설치한다. (Version 3.17.3 as of 2020.08.03)
 
 ### VTK 설치
-#### VTK 9.0.1 을 CMake로 Generate 한다.
-  - C:\Works\VTK-9.0.1에 압축을 푼다.
-  - CMake 에서 
-    - source 위치는 C:\Works\VTK-9.0.1
-    - build 위치는 C:\Works\VTK-9.0.1\build
-    - compiler 종류는 Visual C++ 2017 (Version 15.9.24 as of 2020.08.01)
-    - processor 종류는 x64 (intel 64 bit)
+#### VTK 9.0.1의 소스코드를 받아서 C:\Works\VTK-9.0.1에 압축을 푼다.
+#### VTK 9.0.1을 CMake로 Generate 한다.
+  - source 위치는 C:\Works\VTK-9.0.1
+  - build 위치는 C:\Works\VTK-9.0.1\build
+  - compiler 종류는 Visual C++ 2017 
+  - processor 종류는 x64 (intel 64 bit)
 #### 위에서 generate 된 vtk의 sln 파일을 Visual C++ 2017에서 load 한다.
   - 이 프로젝트의 Properties -> General -> Character Set을 Use Unicode Character Set으로 설정한다.
   - build 종류를 debug, x64 로 설정하고, all build 한다.
