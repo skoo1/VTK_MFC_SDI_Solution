@@ -437,6 +437,7 @@ vtkzlib-9.0d.dll
     - 이 프로젝트의 Properties -> General -> Character Set을 Use Unicode Character Set으로 설정한다.
     
 ### 기타 설명
+  - vtk는 기본적으로 pipeline을 연결하는 방식이다. 주의: object마다 pipeline을 연결하는 방식이 다르다.
   - vtk object의 instance를 만들 때 아래와 같이 포인터에 직접 new 하는 원초적인 방식을 사용하였다.
     - vtkRenderer* m_pvtkRenderer = vtkRenderer::New();
   - vtk에서 최근 만든 방법으로 vtkSmartPointer와 vtkNew가 있지만, MFC와 같이 사용하면 메모리 오류가 나고, 해결이 어려웠다. 
