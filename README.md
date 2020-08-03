@@ -3,6 +3,10 @@
 ### 작성자: SK
 ### 초기 작성일: 2020.08.03
 ---
+<div>
+<img width="500" src ="https://user-images.githubusercontent.com/65583800/89154179-5b833d80-d5a1-11ea-959a-81b7ea06bcc5.png">
+</div>
+
 #### Visual C++ 2017을 설치한다. (Version 15.9.24 as of 2020.08.03)
 #### CMake를 설치한다. (Version 3.17.3 as of 2020.08.03)
 
