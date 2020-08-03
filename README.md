@@ -435,3 +435,13 @@ vtkzlib-9.0d.dll
     - 이 프로젝트의 Properties -> Linker -> General -> Enable Incremental Linking을 No로 설정한다.
   - 실행 시간에 이해가 안되는 에러가 발생할 때 ...
     - 이 프로젝트의 Properties -> General -> Character Set을 Use Unicode Character Set으로 설정한다.
+    
+### 기타 설명
+  - vtk object의 instance를 만들 때 아래와 같이 포인터에 직접 new 하는 원초적인 방식을 사용하였다.
+    - m_pvtkRenderer = vtkRenderer::New();
+  - vtk에서 최근 만든 방법으로 vtkSmartPointer와 vtkNew가 있지만, MFC와 같이 사용하면 메모리 오류가 나고, 해결이 어려웠다. 
+  - std::vector에 vtk object 포인터를 넣어서 사용할 때에도 원초적인 방식으로 하는 것이, 신경만 좀 더 쓰면, 사용하기 쉽다고 생각한다.
+  - 원초적인 방식으로 vtk object의 instance 를 만들면 아래와 같은 방법으로 꼭 메모리에서 제거해야 한다.
+    - m_pvtkRenderer->Delete();
+  - 이 예제에서는 모든 vtk object들을 ~View.h와 ~View.cpp에 넣었다. 보다 구조적인 관리를 위해 ~Doc.h와 ~Doc.cpp에 넣는 것도 가능하다.
+    
