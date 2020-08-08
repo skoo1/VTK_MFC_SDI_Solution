@@ -434,7 +434,7 @@ vtkzlib-9.0d.dll
   - 링킹 시에 tlog 파일이 사용중이라 link.exe를 사용할 수 없다는 에러가 발생할 경우 (Linker busy 에러)
     - 이 프로젝트의 Properties -> Linker -> General -> Enable Incremental Linking을 No로 설정한다.
   - 실행 시간에 이해가 안되는 에러가 발생할 때 ...
-    - 이 프로젝트의 Properties -> General -> Character Set을 Use Unicode Character Set으로 설정한다.
+    - 이 프로젝트의 Properties -> General -> Character Set을 Use Unicode Character Set 또는 Use Multi-Byte Character Set 으로 변경해본다. VTK Library를 컴파일 할 때 생성했던 Character Set과 동일해야 한다. 가능하면 두 가지를 모두 Unicode Character Set으로 통일하는 것을 추천한다.
     
 ### 기타 설명
   - vtk는 기본적으로 pipeline을 연결하는 방식이다. 주의: object마다 pipeline을 연결하는 방식이 다르다.
