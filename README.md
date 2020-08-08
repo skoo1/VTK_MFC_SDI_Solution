@@ -294,7 +294,7 @@ vtkzlib-9.0d.lib
 ```
   - 실행시 dll 로딩을 위하여 이 프로젝트의 Properties -> DebuggingEnvironment에 아래 내용을 추가한다.
 ```
-PATH=%PATH%;C:\Users\skoo\Works\VTK-9.0.1\build\bin\Debug
+PATH=%PATH%;C:\Works\VTK-9.0.1\build\bin\Debug
 ```
 ### 특수 환경 설정
   - 이 프로젝트를 실행하면, 프로그램이 종료되면서 memory dump 현상이 발생한다. 이는 VTK objects가 MFC objects보다 늦게 소멸되기 때문이다.
