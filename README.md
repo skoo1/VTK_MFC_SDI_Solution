@@ -1,16 +1,22 @@
 # VTK_MFC_SDI_Solution
 
-#### Visual C++ 2017을 설치한다.
-#### CMake를 설치한다.
+### 작성자: SK
+### 초기 작성일: 2020.08.03
+---
+<div>
+<img width="500" src ="https://user-images.githubusercontent.com/65583800/89154179-5b833d80-d5a1-11ea-959a-81b7ea06bcc5.png">
+</div>
+
+#### Visual C++ 2017을 설치한다. (Version 15.9.24 as of 2020.08.03)
+#### CMake를 설치한다. (Version 3.17.3 as of 2020.08.03)
 
 ### VTK 설치
-#### VTK 9.0.1 을 CMake로 Generate 한다.
-  - C:\Works\VTK-9.0.1에 압축을 푼다.
-  - CMake 에서 
-    - source 위치는 C:\Works\VTK-9.0.1
-    - build 위치는 C:\Works\VTK-9.0.1\build
-    - compiler 종류는 Visual C++ 2017 (Version 15.9.24 as of 2020.08.01)
-    - processor 종류는 x64 (intel 64 bit)
+#### VTK 9.0.1의 소스코드를 받아서 C:\Works\VTK-9.0.1에 압축을 푼다.
+#### VTK 9.0.1을 CMake로 Generate 한다.
+  - source 위치는 C:\Works\VTK-9.0.1
+  - build 위치는 C:\Works\VTK-9.0.1\build
+  - compiler 종류는 Visual C++ 2017 
+  - processor 종류는 x64 (intel 64 bit)
 #### 위에서 generate 된 vtk의 sln 파일을 Visual C++ 2017에서 load 한다.
   - 이 프로젝트의 Properties -> General -> Character Set을 Use Unicode Character Set으로 설정한다.
   - build 종류를 debug, x64 로 설정하고, all build 한다.
@@ -288,7 +294,7 @@ vtkzlib-9.0d.lib
 ```
   - 실행시 dll 로딩을 위하여 이 프로젝트의 Properties -> DebuggingEnvironment에 아래 내용을 추가한다.
 ```
-PATH=%PATH%;C:\Users\skoo\Works\VTK-9.0.1\build\bin\Debug
+PATH=%PATH%;C:\Works\VTK-9.0.1\build\bin\Debug
 ```
 ### 특수 환경 설정
   - 이 프로젝트를 실행하면, 프로그램이 종료되면서 memory dump 현상이 발생한다. 이는 VTK objects가 MFC objects보다 늦게 소멸되기 때문이다.
@@ -429,3 +435,14 @@ vtkzlib-9.0d.dll
     - 이 프로젝트의 Properties -> Linker -> General -> Enable Incremental Linking을 No로 설정한다.
   - 실행 시간에 이해가 안되는 에러가 발생할 때 ...
     - 이 프로젝트의 Properties -> General -> Character Set을 Use Unicode Character Set으로 설정한다.
+    
+### 기타 설명
+  - vtk는 기본적으로 pipeline을 연결하는 방식이다. 주의: object마다 pipeline을 연결하는 방식이 다르다.
+  - 이 예제에서는 vtk object의 instance를 만들 때 아래와 같이 포인터에 직접 new 하는 원초적인 방식을 사용하였다.
+    - vtkRenderer* m_pvtkRenderer = vtkRenderer::New();
+  - vtk에서 최근 만든 방법으로 vtkSmartPointer와 vtkNew가 있지만, MFC와 같이 사용하면 메모리 오류가 나고, 해결이 어려웠다. 
+  - std::vector에 vtk object 포인터를 넣어서 사용할 때에도 원초적인 방식으로 하는 것이, 신경만 좀 더 쓰면, 사용하기 쉽다고 생각한다.
+  - 원초적인 방식으로 vtk object의 instance 를 만들면 아래와 같은 방법으로 꼭 메모리에서 제거해야 한다.
+    - m_pvtkRenderer->Delete();
+  - 이 예제에서는 모든 vtk object들을 ~View.h와 ~View.cpp에 넣었다. 보다 구조적인 관리를 위해 ~Doc.h와 ~Doc.cpp에 넣는 것도 가능하다.
+    
