@@ -4,7 +4,7 @@
     <RESOURCE_FILE>SimpleVTKMFCSDI.rc</RESOURCE_FILE>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LocalDebuggerEnvironment>PATH=%PATH%;C:\Users\skoo\Works\VTK-9.0.1\build\bin\Debug</LocalDebuggerEnvironment>
+    <LocalDebuggerEnvironment>PATH=%PATH%;C:\Works\VTK-9.0.1\build\bin\Debug</LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>
